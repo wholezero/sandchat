@@ -1,0 +1,14 @@
+@import "bootstrap";
+
+html, body {
+  height: 100%;
+}
+
+#chats {
+  max-height: calc(100% - 5.5rem);
+  overflow-y: auto;
+  .avatar {
+    max-width: 40px;
+    min-width: 16px;
+  }
+}

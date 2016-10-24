@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-block">
+    <div class="row">
+      <div class="col-md-1">
+        <%= avatar_for chat.user %>
+      </div>
+      <div class="col-md-11">
+        <p class="card-text">
+          <span class="text-muted"><%= chat.user.name %> at <%= chat.timestamp %> says</span><br>
+          <%= chat.message %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

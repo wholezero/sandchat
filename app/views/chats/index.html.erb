@@ -1,0 +1,10 @@
+<div id="chats">
+  <%= render @chats %>
+</div>
+<%= form_for @chat, url: '#' do |f| %>
+  <div class="form-group col-xs-9 col-md-11">
+    <%= f.text_field :message, class: 'form-control' %>
+    <small class="text-muted">From 2 to 1000 characters</small>
+  </div>
+  <%= f.submit "Post", class: 'btn btn-primary btn-md col-xs-3 col-md-1' %>
+<% end %>
