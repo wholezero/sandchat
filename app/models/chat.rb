@@ -24,7 +24,6 @@ class Chat < ApplicationRecord
   end
 
   after_create_commit do
-    puts "after create"
     ChatBroadcastJob.perform_later(self)
   end
 end
