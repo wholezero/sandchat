@@ -13,6 +13,6 @@ module Proj
     # TODO(someday): figure out something better for sandstorm origin
     config.action_cable.disable_request_forgery_protection = true
 
-    config.logger = Logger.new(STDOUT)
+    config.lograge.enabled = true
   end
 end

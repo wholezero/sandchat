@@ -1,7 +1,6 @@
 module ApplicationHelper
-  def avatar_for(user, opts = {})
-    opts[:alt] = user.name
-    opts[:class] = 'avatar'
-    image_tag user.picture, opts
+  def avatar_for(user)
+    image_tag user.picture,
+      alt: user.name, title: "#{user.name} (#{user.uid})", class: 'avatar'
   end
 end
