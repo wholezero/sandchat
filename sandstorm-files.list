@@ -2107,10 +2107,6 @@ lib/tasks
 proc/cpuinfo
 public/404.html
 public/500.html
-public/assets
-public/assets/.sprockets-manifest-a1b09e2e389041458aedc80ac617a483.json
-public/assets/application-33130b99ff2a594c3dbf12a8c2312084072343f6dc62db70ce312aefeafee246.js.gz
-public/assets/application-836f77092e40b8964c0573bfc624bed726c942bc3768876430535540011609f5.css.gz
 public/favicon.ico
 sandstorm-http-bridge
 sandstorm-http-bridge-config

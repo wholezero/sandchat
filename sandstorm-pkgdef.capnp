@@ -112,7 +112,7 @@ const pkgdef :Spk.PackageDefinition = (
   # `spk dev` will write a list of all the files your app uses to this file.
   # You should review it later, before shipping your app.
 
-  alwaysInclude = [],
+  alwaysInclude = ["public/assets"],
 
   #bridgeConfig = (
   #  # Used for integrating permissions and roles into the Sandstorm shell
