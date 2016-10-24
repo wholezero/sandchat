@@ -9,8 +9,8 @@ const pkgdef :Spk.PackageDefinition = (
   id = "q95sez0acjwq7c1emxyxz38947sr7sgc1gn9yju93nqccz83fzyh",
   manifest = (
     appTitle = (defaultText = "SandChat"),
-    appVersion = 0,  # Increment this for every release.
-    appMarketingVersion = (defaultText = "0.0.0"),
+    appVersion = 1,  # Increment this for every release.
+    appMarketingVersion = (defaultText = "0.0.1"),
 
     actions = [
       ( nounPhrase = (defaultText = "room"),
@@ -58,14 +58,11 @@ const pkgdef :Spk.PackageDefinition = (
         # Sizes are given in device-independent pixels, so if you took these
         # screenshots on a Retina-style high DPI screen, divide each dimension by two.
 
-        #(width = 746, height = 795, jpeg = embed "path/to/screenshot-1.jpeg"),
-        #(width = 640, height = 480, png = embed "path/to/screenshot-2.png"),
+        (width = 475, height = 685, png = embed "shot1.png"),
+        (width = 1366, height = 768, png = embed "shot2.png"),
       ],
 
-      #changeLog = (defaultText = embed "path/to/sandstorm-specific/changelog.md"),
-      # Documents the history of changes in Github-flavored markdown format (with the same restrictions
-      # as govern `description`). We recommend formatting this with an H1 heading for each version
-      # followed by a bullet list of changes.
+      changeLog = (defaultText = embed "changelog.md"),
     ),
   ),
 
