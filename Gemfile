@@ -15,4 +15,5 @@ gem 'turbolinks', '~> 5'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'listen'
 end
