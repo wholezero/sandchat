@@ -4,6 +4,7 @@
 # expect comments or ordering to be retained.
 .bundle/config
 .bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/byebug-9.0.6
+.bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/ffi-1.9.14
 .bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/nio4r-1.2.1
 .bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/nokogiri-1.6.8.1
 .bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/puma-3.6.0
@@ -1799,9 +1800,11 @@
 .bundle/ruby/2.3.0/specifications/concurrent-ruby-1.0.2.gemspec
 .bundle/ruby/2.3.0/specifications/erubis-2.7.0.gemspec
 .bundle/ruby/2.3.0/specifications/execjs-2.7.0.gemspec
+.bundle/ruby/2.3.0/specifications/ffi-1.9.14.gemspec
 .bundle/ruby/2.3.0/specifications/globalid-0.3.7.gemspec
 .bundle/ruby/2.3.0/specifications/i18n-0.7.0.gemspec
 .bundle/ruby/2.3.0/specifications/jquery-rails-4.2.1.gemspec
+.bundle/ruby/2.3.0/specifications/listen-3.1.5.gemspec
 .bundle/ruby/2.3.0/specifications/loofah-2.0.3.gemspec
 .bundle/ruby/2.3.0/specifications/mail-2.6.4.gemspec
 .bundle/ruby/2.3.0/specifications/method_source-0.8.2.gemspec
@@ -1819,6 +1822,9 @@
 .bundle/ruby/2.3.0/specifications/rails-html-sanitizer-1.0.3.gemspec
 .bundle/ruby/2.3.0/specifications/railties-5.0.0.1.gemspec
 .bundle/ruby/2.3.0/specifications/rake-11.3.0.gemspec
+.bundle/ruby/2.3.0/specifications/rb-fsevent-0.9.8.gemspec
+.bundle/ruby/2.3.0/specifications/rb-inotify-0.9.7.gemspec
+.bundle/ruby/2.3.0/specifications/ruby_dep-1.5.0.gemspec
 .bundle/ruby/2.3.0/specifications/sass-3.4.22.gemspec
 .bundle/ruby/2.3.0/specifications/sass-rails-5.0.6.gemspec
 .bundle/ruby/2.3.0/specifications/sprockets-3.7.0.gemspec
@@ -1954,9 +1960,9 @@ proc/cpuinfo
 public/404.html
 public/500.html
 public/assets
-public/assets/.sprockets-manifest-e0996dc65412039fca1d5a46e7d25a37.json
+public/assets/.sprockets-manifest-03f7927412d3a6586aa0225c5c87ade6.json
+public/assets/application-0b8ea9b469e33529fcff7f7c74f30b409c0930d405dda9df565de15d3cc856e5.css.gz
 public/assets/application-33130b99ff2a594c3dbf12a8c2312084072343f6dc62db70ce312aefeafee246.js.gz
-public/assets/application-836f77092e40b8964c0573bfc624bed726c942bc3768876430535540011609f5.css.gz
 public/favicon.ico
 sandstorm-http-bridge
 sandstorm-http-bridge-config
