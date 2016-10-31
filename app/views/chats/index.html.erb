@@ -2,11 +2,10 @@
   <%= render @chats %>
 </div>
 <div id="users" class="col-md-3">
-  <%= render @users %>
 </div>
 <%= form_for @chat, url: '#' do |f| %>
   <div class="form-group col-xs-9 col-md-11">
-    <%= f.text_field :message, placeholder: 'Message', class: 'form-control', autofocus: true, autocomplete: :off %>
+    <%= f.text_field :message, placeholder: 'Message', maxlength: 1000, class: 'form-control', autofocus: true, autocomplete: :off %>
   </div>
   <%= f.submit "Post", class: 'btn btn-primary btn-md col-xs-3 col-md-1' %>
 <% end %>

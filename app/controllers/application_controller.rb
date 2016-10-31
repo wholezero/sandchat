@@ -29,16 +29,11 @@ class ApplicationController < ActionController::Base
       raise 'You must be logged in to use this app'
     end
     @current_user = User.find_or_initialize_by(uid: uid)
+    @current_tab = @current_user.tabs.where(tid: tid).first_or_initialize
     @current_user.update!(
       name: sandstorm_header(:username),
       picture: sandstorm_header(:user_picture),
       pronouns: sandstorm_header(:user_pronouns))
-    @current_tab = @current_user.tabs.where(tid: tid).first_or_initialize
-    if @current_tab.persisted?
-      @current_tab.touch
-    else
-      @current_tab.save!
-    end
   end
 
   private

@@ -24,6 +24,7 @@ class ChatsChannel < ApplicationCable::Channel
   end
 
   def send_chat(data)
+    current_tab.touch
     current_user.chats.create!(message: data['chat'])
   end
 end

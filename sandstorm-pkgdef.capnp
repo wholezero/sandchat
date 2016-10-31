@@ -9,8 +9,8 @@ const pkgdef :Spk.PackageDefinition = (
   id = "q95sez0acjwq7c1emxyxz38947sr7sgc1gn9yju93nqccz83fzyh",
   manifest = (
     appTitle = (defaultText = "SandChat"),
-    appVersion = 2,  # Increment this for every release.
-    appMarketingVersion = (defaultText = "0.0.2"),
+    appVersion = 3,  # Increment this for every release.
+    appMarketingVersion = (defaultText = "0.1.0"),
 
     actions = [
       ( nounPhrase = (defaultText = "room"),

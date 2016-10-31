@@ -15,12 +15,18 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ###
-App.active_users = App.cable.subscriptions.create "ActiveUsersChannel",
-  connected: ->
-    # Called when the subscription is ready for use on the server
+jQuery(document).on 'turbolinks:load', ->
+  received_data = false
 
-  disconnected: ->
-    # Called when the subscription has been terminated by the server
+  App.active_users = App.cable.subscriptions.create "ActiveUsersChannel",
+    connected: ->
+      $.get '/users', (res) ->
+        if !received_data
+          $('#users').html(res)
 
-  received: (data) ->
-    $('#users').html(data.users)
+    disconnected: ->
+      # Called when the subscription has been terminated by the server
+
+    received: (data) ->
+      received_data = true
+      $('#users').html(data.users)

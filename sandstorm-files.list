@@ -1970,8 +1970,8 @@ proc/cpuinfo
 public/404.html
 public/500.html
 public/assets
-public/assets/.sprockets-manifest-598807cee34168b5230bfd353adcce06.json
-public/assets/application-ab795352e6634c27db6c01afe5bb39fefe60210a59e3da6d6fcb102bc9303154.js.gz
+public/assets/.sprockets-manifest-5e9ce2fc7ede0d101df8ef9d2aef0475.json
+public/assets/application-4ee7bebd1705cf46069562180e26faaac5f8301f2828aa698a8e3b8b9434f048.js.gz
 public/assets/application-e2c5711e5acdb47b21bd3e6193261bb427ee3d7ed62a1c6412f8e4f43e29a1f8.css.gz
 public/favicon.ico
 sandstorm-http-bridge

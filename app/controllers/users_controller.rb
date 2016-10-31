@@ -17,6 +17,6 @@
 #
 class UsersController < ApplicationController
   def index
-    render json: User.active
+    render User.active
   end
 end
