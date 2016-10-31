@@ -17,5 +17,8 @@
 #
 module ApplicationCable
   class Channel < ActionCable::Channel::Base
+    def current_user
+      current_tab.user
+    end
   end
 end

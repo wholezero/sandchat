@@ -7,7 +7,7 @@ export RAILS_ENV=production
 export RAILS_SERVE_STATIC_FILES=yes
 export RAILS_LOG_TO_STDOUT=yes
 
-LATEST_MIGRATION=20161023151458
+LATEST_MIGRATION=20161031003402
 if [ ! -f /var/migrations/$LATEST_MIGRATION ]; then
   bin/rails db:migrate
   mkdir -p /var/migrations

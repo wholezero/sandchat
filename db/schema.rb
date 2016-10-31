@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161023151458) do
+ActiveRecord::Schema.define(version: 20161031003402) do
 
   create_table "chats", force: :cascade do |t|
     t.text     "message"
@@ -20,13 +20,23 @@ ActiveRecord::Schema.define(version: 20161023151458) do
     t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
+  create_table "tabs", force: :cascade do |t|
+    t.string   "tid",        null: false
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tid"], name: "index_tabs_on_tid", unique: true
+    t.index ["user_id"], name: "index_tabs_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
-    t.text     "uid",        null: false
+    t.text     "uid",                    null: false
     t.text     "name"
     t.text     "picture"
     t.text     "pronouns"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "tabs_count", default: 0
     t.index ["uid"], name: "index_users_on_uid", unique: true
   end
 

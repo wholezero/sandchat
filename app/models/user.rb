@@ -17,4 +17,13 @@
 #
 class User < ApplicationRecord
   has_many :chats
+  has_many :tabs
+
+  scope :active, -> do
+    where('tabs_count > 0 and updated_at > ?', 5.minutes.ago)
+  end
+
+  #after_touch do
+  #  ActiveUsersJob.perform_later
+  #end
 end

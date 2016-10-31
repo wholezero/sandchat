@@ -426,6 +426,7 @@
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/connection_adapters/abstract/quoting.rb
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/connection_adapters/abstract/savepoints.rb
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/connection_adapters/abstract/schema_creation.rb
+.bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/connection_adapters/abstract/schema_definitions.rb
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/connection_adapters/abstract/schema_dumper.rb
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/connection_adapters/abstract/schema_statements.rb
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/connection_adapters/abstract/transaction.rb
@@ -460,6 +461,7 @@
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/locking/pessimistic.rb
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/log_subscriber.rb
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/migration.rb
+.bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/migration/compatibility.rb
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/migration/join_table.rb
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/model_schema.rb
 .bundle/ruby/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/nested_attributes.rb
@@ -1873,6 +1875,7 @@ app/helpers/chats_helper.rb
 app/jobs
 app/jobs/application_job.rb
 app/jobs/chat_broadcast_job.rb
+app/jobs/tab_cleanup_job.rb
 app/mailers
 app/mailers/application_mailer.rb
 app/models
@@ -1880,6 +1883,7 @@ app/models/application_record.rb
 app/models/chat.rb
 app/models/concerns
 app/models/concerns/.keep
+app/models/tab.rb
 app/models/user.rb
 app/views/chats/_chat.html.erb
 app/views/chats/index.html.erb
@@ -1905,6 +1909,7 @@ config/initializers/inflections.rb
 config/initializers/mime_types.rb
 config/initializers/new_framework_defaults.rb
 config/initializers/session_store.rb
+config/initializers/tab_cleanup_job.rb
 config/initializers/wrap_parameters.rb
 config/locales
 config/locales/en.yml
@@ -1914,11 +1919,12 @@ config/secrets.yml
 continue.sh
 db
 db/migrate
+db/migrate/20161031003402_create_tabs.rb
+db/production.sqlite3
 etc/localtime
 etc/ssl/cert.pem
 etc/ssl/certs.pem
 etc/ssl/certs/ca-certificates.crt
-initdb.sqlite3
 lib/assets
 lib/ld-musl-x86_64.so.1
 lib/libacl.so.1
@@ -1960,7 +1966,7 @@ proc/cpuinfo
 public/404.html
 public/500.html
 public/assets
-public/assets/.sprockets-manifest-03f7927412d3a6586aa0225c5c87ade6.json
+public/assets/.sprockets-manifest-44b9000afa1b69bc2bba5a8e097450b5.json
 public/assets/application-0b8ea9b469e33529fcff7f7c74f30b409c0930d405dda9df565de15d3cc856e5.css.gz
 public/assets/application-33130b99ff2a594c3dbf12a8c2312084072343f6dc62db70ce312aefeafee246.js.gz
 public/favicon.ico

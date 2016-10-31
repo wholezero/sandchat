@@ -17,19 +17,19 @@
 #
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
-    identified_by :current_user
+    identified_by :current_tab
 
     def connect
-      self.current_user = find_verified_user
-      logger.add_tags current_user.uid
+      self.current_tab = find_tab
+      logger.add_tags current_tab.tid, current_tab.user.uid
     end
 
     protected
 
-    def find_verified_user
-      if verified_user = User.find_by(
-          uid: request.env['HTTP_X_SANDSTORM_USER_ID'])
-        verified_user
+    def find_tab
+      if tab = Tab.find_by(
+          tid: request.env['HTTP_X_SANDSTORM_TAB_ID'])
+        tab
       else
         reject_unauthorized_connection
       end

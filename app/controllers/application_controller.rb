@@ -19,30 +19,25 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :require_user!
 
+  attr_reader :current_tab, :current_user
+
   def require_user!
-    if ! sandstorm_header(:tab_id)
+    if ! tid = sandstorm_header(:tab_id)
       raise 'This app needs to run inside of sandstorm'
     end
     if ! uid = sandstorm_header(:user_id)
       raise 'You must be logged in to use this app'
     end
-    user = User.find_or_initialize_by(uid: uid)
-    user.name = sandstorm_header(:username)
-    user.picture = sandstorm_header(:user_picture)
-    user.pronouns = sandstorm_header(:user_pronouns)
-    user.save!
-    self.current_user = user
-  end
-
-  def current_user
-    @current_user
+    @current_user = User.find_or_initialize_by(uid: uid)
+    @current_user.update!(
+      name: sandstorm_header(:username),
+      picture: sandstorm_header(:user_picture),
+      pronouns: sandstorm_header(:user_pronouns))
+    @current_tab = @current_user.tabs.where(tid: tid).first_or_create
+    @current_tab.touch
   end
 
   private
-
-  def current_user=(user)
-    @current_user ||= user
-  end
 
   def sandstorm_header(field)
     raw_header = request.env["HTTP_X_SANDSTORM_#{field.to_s.upcase}"]

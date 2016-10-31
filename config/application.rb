@@ -13,8 +13,6 @@ module Proj
     # TODO(someday): figure out something better for sandstorm origin
     config.action_cable.disable_request_forgery_protection = true
 
-    config.action_cable.logger = Logger.new('/dev/null')
-
     config.log_level = :warn
   end
 end
