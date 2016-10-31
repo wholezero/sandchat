@@ -15,15 +15,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-class User < ApplicationRecord
-  has_many :chats
-  has_many :tabs
+class ActiveUsersJob < ApplicationJob
+  queue_as :default
 
-  scope :active, -> do
-    where('tabs_count > 0 and updated_at > ?', 5.minutes.ago)
+  def perform
+    ActionCable.server.broadcast 'active_users_channel',
+      users: render_users(User.active)
   end
 
-  after_commit do
-    ActiveUsersJob.perform_later
+  private
+
+  def render_users(users)
+    UsersController.render partial: 'users/user', collection: users
   end
 end

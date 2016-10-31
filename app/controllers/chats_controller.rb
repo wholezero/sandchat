@@ -19,6 +19,7 @@ class ChatsController < ApplicationController
   def index
     @title = "Hi"
     @chats = Chat.all
+    @users = User.active
     @chat = Chat.new
   end
 end

@@ -1860,6 +1860,7 @@ app/assets/javascripts/chats.coffee
 app/assets/stylesheets
 app/assets/stylesheets/application.scss
 app/channels
+app/channels/active_users_channel.rb
 app/channels/application_cable
 app/channels/application_cable/channel.rb
 app/channels/application_cable/connection.rb
@@ -1869,10 +1870,12 @@ app/controllers/application_controller.rb
 app/controllers/chats_controller.rb
 app/controllers/concerns
 app/controllers/concerns/.keep
+app/controllers/users_controller.rb
 app/helpers
 app/helpers/application_helper.rb
 app/helpers/chats_helper.rb
 app/jobs
+app/jobs/active_users_job.rb
 app/jobs/application_job.rb
 app/jobs/chat_broadcast_job.rb
 app/jobs/tab_cleanup_job.rb
@@ -1888,6 +1891,7 @@ app/models/user.rb
 app/views/chats/_chat.html.erb
 app/views/chats/index.html.erb
 app/views/layouts/application.html.erb
+app/views/users/_user.html.erb
 bin/dash
 bin/rails
 bin/sh
@@ -1966,9 +1970,9 @@ proc/cpuinfo
 public/404.html
 public/500.html
 public/assets
-public/assets/.sprockets-manifest-44b9000afa1b69bc2bba5a8e097450b5.json
-public/assets/application-0b8ea9b469e33529fcff7f7c74f30b409c0930d405dda9df565de15d3cc856e5.css.gz
-public/assets/application-33130b99ff2a594c3dbf12a8c2312084072343f6dc62db70ce312aefeafee246.js.gz
+public/assets/.sprockets-manifest-598807cee34168b5230bfd353adcce06.json
+public/assets/application-ab795352e6634c27db6c01afe5bb39fefe60210a59e3da6d6fcb102bc9303154.js.gz
+public/assets/application-e2c5711e5acdb47b21bd3e6193261bb427ee3d7ed62a1c6412f8e4f43e29a1f8.css.gz
 public/favicon.ico
 sandstorm-http-bridge
 sandstorm-http-bridge-config

@@ -1,5 +1,8 @@
-<div id="chats">
+<div id="chats" class="col-md-9">
   <%= render @chats %>
+</div>
+<div id="users" class="col-md-3">
+  <%= render @users %>
 </div>
 <%= form_for @chat, url: '#' do |f| %>
   <div class="form-group col-xs-9 col-md-11">

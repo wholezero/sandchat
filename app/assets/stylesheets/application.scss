@@ -23,10 +23,31 @@ html, body {
 }
 
 #chats {
-  max-height: calc(100% - 3.5rem);
   overflow-y: auto;
   .avatar {
-    max-width: 40px;
-    min-width: 16px;
+    width: 40px;
+    max-height: 40px;
+  }
+}
+
+#users {
+  .avatar {
+    width: 24px;
+    max-height: 24px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #chats {
+    max-height: calc(100% - 24px - 3.5rem);
+  }
+  #users div {
+    display: inline-block;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  #chats {
+    max-height: calc(100% - 3.5rem);
   }
 }

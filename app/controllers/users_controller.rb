@@ -15,15 +15,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-class User < ApplicationRecord
-  has_many :chats
-  has_many :tabs
-
-  scope :active, -> do
-    where('tabs_count > 0 and updated_at > ?', 5.minutes.ago)
-  end
-
-  after_commit do
-    ActiveUsersJob.perform_later
+class UsersController < ApplicationController
+  def index
+    render json: User.active
   end
 end

@@ -15,15 +15,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-class User < ApplicationRecord
-  has_many :chats
-  has_many :tabs
-
-  scope :active, -> do
-    where('tabs_count > 0 and updated_at > ?', 5.minutes.ago)
+class ActiveUsersChannel < ApplicationCable::Channel
+  def subscribed
+    stream_from "active_users_channel"
   end
 
-  after_commit do
-    ActiveUsersJob.perform_later
+  def unsubscribed
+    current_tab.destroy
   end
 end
